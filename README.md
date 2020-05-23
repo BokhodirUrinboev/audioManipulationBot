@@ -23,3 +23,8 @@
 6. run the app.py file in order to run telegram bot
 	python app.py
 ```
+
+## Video 
+> [![Video](https://img.youtube.com/vi/HesTK45AmRM/0.jpg)](https://youtu.be/HesTK45AmRM)
+
+https://youtu.be/HesTK45AmRM
