@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import datetime
 from random import randint
+from gtts import gTTS
 from pydub import AudioSegment
 
 
@@ -81,6 +82,23 @@ def background_effect(sound, background, vol_dec= 5, lebel_name="sound"):
     return sound_path, img_path
 
 
+def text_to_speech(text, language):
+    # Language in which you want to convert
+
+    basename_s = PATH_RESULT + "result_sound"
+    suffix_s = datetime.datetime.now().strftime("%y%m%d_%H%M%S" + ".mp3")
+    sound_path = "_".join([basename_s, suffix_s])
+    # Passing the text and language to the engine,
+    # here we have marked slow=False. Which tells
+    # the module that the converted audio should
+
+    # have a high speed
+    myobj = gTTS(text=text, lang=language, slow=False)
+
+    # Saving the converted audio in a mp3 file named
+    # welcome
+    myobj.save(sound_path)
+    return sound_path
 # sound = AudioSegment.from_ogg(PATH_TEMP + "putin.ogg")
 # background = AudioSegment.from_mp3(PATH_SOUND_EFFECT + SOUND_EFFECT[2])
 

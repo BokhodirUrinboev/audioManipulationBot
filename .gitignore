@@ -121,7 +121,7 @@ venv.bak/
 
 # mkdocs documentation
 /site
-
+/ngrok.exe
 # mypy
 .mypy_cache/
 .dmypy.json

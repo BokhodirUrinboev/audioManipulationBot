@@ -3,6 +3,7 @@
 1. Reverse audio signal
 2. Change speed of audio
 3. Add background environment
+4. Convert text to speech
 ```
 
 ## usage
