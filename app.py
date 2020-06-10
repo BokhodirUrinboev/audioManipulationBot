@@ -54,7 +54,7 @@ def start(message):
     markup.add(types.KeyboardButton(BACKGROUND_EFFECT_BUTTON))
     markup.add(types.KeyboardButton(TEXT_TO_SPEECH_BUTTON))
 
-    bot.send_message(chat_id=chat_id, text="--------CHOOSE FUNCTIONALITY --------", reply_markup=markup)
+    bot.send_message(chat_id=chat_id, text="--------CHOOSE FUNCTIONALITY--------", reply_markup=markup)
 
 ###############################################################################################
 
@@ -88,7 +88,7 @@ def reverse_sound_msg(message):
     USER = {}
     USER['chat_id'] = chat_id
     USERS.append(USER)
-    msg = bot.send_message(chat_id=chat_id, text="----- SEND AUDIO -----")
+    msg = bot.send_message(chat_id=chat_id, text="-----SEND AUDIO-----")
     bot.register_next_step_handler(msg, reverse_sound_f)
 
 def r_s_check(message):
@@ -136,9 +136,9 @@ def reverse_sound_f(message):
         markup.add(types.KeyboardButton(BACKGROUND_EFFECT_BUTTON))
         markup.add(types.KeyboardButton(TEXT_TO_SPEECH_BUTTON))
 
-        bot.send_message(chat_id=chat_id, text="--------CHOOSE FUNCTIONALITY --------", reply_markup=markup)
+        bot.send_message(chat_id=chat_id, text="-------CHOOSE FUNCTIONALITY--------", reply_markup=markup)
     else:
-        msg = bot.send_message(chat_id=chat_id, text="--- SEND ONLY AUDIO ---")
+        msg = bot.send_message(chat_id=chat_id, text="---SEND ONLY AUDIO---")
         bot.register_next_step_handler(msg, reverse_sound_f)
 
 
@@ -158,7 +158,7 @@ def speed_change_f_msg(message):
 
     for i in SPEED:
         markup.add(types.KeyboardButton(i))
-    msg = bot.send_message(chat_id=chat_id, text="----- CHOOSE SPEED -----", reply_markup=markup)
+    msg = bot.send_message(chat_id=chat_id, text="-----CHOOSE SPEED-----", reply_markup=markup)
     bot.register_next_step_handler(msg, speed_choose)
 
 
@@ -181,14 +181,14 @@ def speed_choose(message):
     audio = message.text
     if audio in SPEED:
         USER['speed'] = audio
-        msg = bot.send_message(chat_id=chat_id, text="----- SEND AUDIO -----")
+        msg = bot.send_message(chat_id=chat_id, text="-----SEND AUDIO-----")
         bot.register_next_step_handler(msg, speed_change_f)
     else:
         markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 
         for i in SPEED:
             markup.add(types.KeyboardButton(i))
-        msg = bot.send_message(chat_id=chat_id, text="----- PLEASE CHOOSE SPEED -----", reply_markup=markup)
+        msg = bot.send_message(chat_id=chat_id, text="-----CHOOSE SPEED-----", reply_markup=markup)
         bot.register_next_step_handler(msg, speed_choose)
 
 
@@ -237,9 +237,9 @@ def speed_change_f(message):
         markup.add(types.KeyboardButton(BACKGROUND_EFFECT_BUTTON))
         markup.add(types.KeyboardButton(TEXT_TO_SPEECH_BUTTON))
 
-        bot.send_message(chat_id=chat_id, text="--------CHOOSE FUNCTIONALITY --------", reply_markup=markup)
+        bot.send_message(chat_id=chat_id, text="--------CHOOSE FUNCTIONALITY--------", reply_markup=markup)
     else:
-        msg = bot.send_message(chat_id=chat_id, text="--- SEND ONLY AUDIO ---")
+        msg = bot.send_message(chat_id=chat_id, text="---SEND ONLY AUDIO---")
         bot.register_next_step_handler(msg, speed_change_f)
 
 
@@ -257,7 +257,7 @@ def background_effect_f_msg(message):
 
     for i in SOUND_EFFECT:
         markup.add(types.KeyboardButton(i))
-    msg = bot.send_message(chat_id=chat_id, text="----- CHOOSE BACKGROUND SOUND -----", reply_markup=markup)
+    msg = bot.send_message(chat_id=chat_id, text="-----CHOOSE ENVIRONMENT-----", reply_markup=markup)
     bot.register_next_step_handler(msg, background_choose)
 
 
@@ -279,14 +279,14 @@ def background_choose(message):
     print(audio)
     if audio in SOUND_EFFECT:
         USER['background_audio'] = audio
-        msg = bot.send_message(chat_id=chat_id, text="----- SEND AUDIO -----")
+        msg = bot.send_message(chat_id=chat_id, text="-----SEND AUDIO-----")
         bot.register_next_step_handler(msg, background_effect_f)
     else:
         markup = types.ReplyKeyboardMarkup(one_time_keyboard=True)
 
         for i in SOUND_EFFECT:
             markup.add(types.KeyboardButton(i))
-        msg = bot.send_message(chat_id=chat_id, text="----- PLEASE SELECT THE AUDIO -----", reply_markup=markup)
+        msg = bot.send_message(chat_id=chat_id, text="-----CHOOSE ENVIRONMENT-----", reply_markup=markup)
         bot.register_next_step_handler(msg, background_choose)
 
 
@@ -337,9 +337,9 @@ def background_effect_f(message):
         markup.add(types.KeyboardButton(BACKGROUND_EFFECT_BUTTON))
         markup.add(types.KeyboardButton(TEXT_TO_SPEECH_BUTTON))
 
-        bot.send_message(chat_id=chat_id, text="--------CHOOSE FUNCTIONALITY --------", reply_markup=markup)
+        bot.send_message(chat_id=chat_id, text="--------CHOOSE FUNCTIONALITY--------", reply_markup=markup)
     else:
-        msg = bot.send_message(chat_id=chat_id, text="--- SEND ONLY AUDIO ---")
+        msg = bot.send_message(chat_id=chat_id, text="---SEND AUDIO ONLY---")
         bot.register_next_step_handler(msg, background_effect_f)
 
 
@@ -442,7 +442,7 @@ def txt_to_speech(message):
         markup.add(types.KeyboardButton(BACKGROUND_EFFECT_BUTTON))
         markup.add(types.KeyboardButton(TEXT_TO_SPEECH_BUTTON))
 
-        bot.send_message(chat_id=chat_id, text="--------CHOOSE FUNCTIONALITY --------", reply_markup=markup)
+        bot.send_message(chat_id=chat_id, text="--------CHOOSE FUNCTIONALITY--------", reply_markup=markup)
     else:
         msg = bot.send_message(chat_id=chat_id, text="--- SEND ONLY TEXT ---")
         bot.register_next_step_handler(msg, reverse_sound_f)
@@ -461,7 +461,7 @@ def getMessage():
 @app.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url='https://659f6bd9f4f5.ngrok.io/' + API_TOKEN)
+    bot.set_webhook(url='https://a13d4970101a.ngrok.io/' + API_TOKEN)
     return "!", 200
 
 
